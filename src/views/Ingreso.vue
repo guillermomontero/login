@@ -1,19 +1,19 @@
 <template>
   <div>
-    <v-row justify-center class="mt-5">
-      <v-col cols="12" md="6" lg="4">
+    <v-row justify-center align="center" justify="center" class="mt-5">
+      <v-col cols="12" sm="8" md="4">
         <v-card>
-          <v-card-text class="display-1 text-uppercase primary white--text text-center" :class="registro ? 'success' : 'accent'">
+          <v-card-text class="headline text-uppercase white--text text-center" :class="registro ? 'success' : 'indigo darken-1'">
             <span v-if="!registro">Ingreso</span>
             <span v-else>Registro</span>
           </v-card-text>
           <v-card-text>
-            <v-btn block color="error" @click="google">
-              <v-icon right dark>fab fa-google</v-icon>
+            <v-btn block color="error" class="my-2" @click="google">
+              <v-icon right dark class="mr-2">fab fa-google</v-icon>
               Google
             </v-btn>
-            <v-btn block color="info" @click="facebook">
-              <v-icon right dark>fab fa-facebook-f</v-icon>
+            <v-btn block color="info" class="my-2" @click="facebook">
+              <v-icon right dark class="mr-2">fab fa-facebook-f</v-icon>
               Facebook
             </v-btn>
           </v-card-text>

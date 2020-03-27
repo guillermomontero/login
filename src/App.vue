@@ -2,20 +2,20 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="indigo"
       dark
     >
-      <div class="d-flex align-center headline text-uppercase">
+      <div class="d-flex align-center headline">
         <router-link :to="{ name: 'home' }">
-          <span>Vue</span>
+          <span class="link-bar">AppVue</span>
         </router-link>
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn @click="cerrarSesion">
+      <v-btn text large @click="cerrarSesion">
         <span class="mr-2">Cerrar sesión</span>
-        <v-icon>fas fa-address-book</v-icon>
+        <v-icon>fas fa-power-off</v-icon>
       </v-btn>
     </v-app-bar>
 
@@ -42,3 +42,10 @@ export default {
   }
 };
 </script>
+
+<style lang="css" scoped>
+  .v-application a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+</style>
