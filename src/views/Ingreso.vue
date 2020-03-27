@@ -12,7 +12,7 @@
               <v-icon right dark>fab fa-google</v-icon>
               Google
             </v-btn>
-            <v-btn block color="info">
+            <v-btn block color="info" @click="facebook">
               <v-icon right dark>fab fa-facebook-f</v-icon>
               Facebook
             </v-btn>
@@ -28,7 +28,10 @@
 </template>
 
 <script>
-import { firebase, auth, db } from '@/firebase'
+import { firebase, auth, db } from '@/firebase';
+import { mapMutations } from 'vuex';
+import router from '@/router'
+
 export default {
   name: 'ingreso',
   data() {
@@ -37,8 +40,17 @@ export default {
     }
   },
   methods: {
-    async google() {
-      const provider = new firebase.auth.GoogleAuthProvider();
+    ...mapMutations(['nuevoUsuario']),
+    facebook() {
+      const providerFB = new firebase.auth.FacebookAuthProvider();
+      this.ingresar(providerFB)
+    },
+    google() {
+      const providerGL = new firebase.auth.GoogleAuthProvider();
+      this.ingresar(providerGL)
+    },
+
+    async ingresar(provider) {
       firebase.auth().languageCode = 'es';
 
       try {
@@ -54,14 +66,17 @@ export default {
           foto: user.photoURL
         }
 
+        this.nuevoUsuario(usuario)
+
         // Guardamos el usuario en firestore
         await db.collection('usuarios').doc(usuario.uid).set(usuario)
         // console.log('Usuario guardado en DB')
 
+        router.push({ name: 'home'})
+
       } catch (error) {
         console.log(error)
       }
-
     }
   }
 }

@@ -6,16 +6,14 @@
       dark
     >
       <div class="d-flex align-center headline text-uppercase">
-        vue
+        <router-link :to="{ name: 'home' }">
+          <span>Vue</span>
+        </router-link>
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
+      <v-btn @click="cerrarSesion">
         <span class="mr-2">Cerrar sesión</span>
         <v-icon>fas fa-address-book</v-icon>
       </v-btn>
@@ -30,6 +28,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
   name: 'App',
@@ -37,5 +36,9 @@ export default {
   data: () => ({
     //
   }),
+
+  methods: {
+    ...mapActions(['cerrarSesion'])
+  }
 };
 </script>
