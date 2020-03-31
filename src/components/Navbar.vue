@@ -60,6 +60,7 @@ export default {
         { title: 'Dashboard', icon: 'fas fa-tachometer-alt', url: { name: 'home'} },
         { title: 'Perfil', icon: 'fas fa-address-card', url: { name: 'ingreso'} },
         { title: 'Admin', icon: 'fas fa-user-shield', url: { name: 'admin'} },
+        { title: 'Chat', icon: 'fas fa-comments', url: { name: 'chat'} },
       ],
     }
   },
