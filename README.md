@@ -1,5 +1,10 @@
 # login
 
+### Customize configuration
+```
+Proyecto realizado con VUE y Firebase. Login simple conectando con Google o Facebook.
+```
+
 ## Project setup
 ```
 npm install
