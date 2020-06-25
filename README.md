@@ -1,6 +1,6 @@
 # login
 
-###Descripción del proyecto
+### Descripción del proyecto
 ```
 Proyecto realizado con VUE y Firebase. Login simple conectando con Google o Facebook.
 ```
